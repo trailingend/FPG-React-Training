@@ -8,7 +8,7 @@ export default class ServiceListItem extends Component {
 
 	componentDidMount(e) {
 		if (this.props.index == 0) {
-			var elem = document.querySelector(".service-text-ctnr:first-child");
+			const elem = document.querySelector(".service-text-ctnr:first-child");
 			this.doSelection(elem);
 		}
 	}

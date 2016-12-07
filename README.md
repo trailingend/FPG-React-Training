@@ -20,6 +20,6 @@ Listen at
 
 Go Production
 ```
-	npm run postinstall
+	npm run build
 	npm start
 ```
