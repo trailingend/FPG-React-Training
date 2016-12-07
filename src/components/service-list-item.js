@@ -6,8 +6,18 @@ export default class ServiceListItem extends Component {
 		this.handleClickBindRoot = this.handleClick.bind(this);
 	}
 
+	componentDidMount(e) {
+		if (this.props.index == 0) {
+			var elem = document.querySelector(".service-text-ctnr:first-child");
+			this.doSelection(elem);
+		}
+	}
+
 	handleClick(e) {
-		const elem = e.target;
+		this.doSelection(e.target);
+	}
+
+	doSelection(elem) {
 		let deltaValue = 0; 
 		if (elem.classList.contains('service-text-ctnr')) {
 			if (elem.classList.contains('selected')) {
@@ -23,7 +33,7 @@ export default class ServiceListItem extends Component {
 	}
 
 	render() {
-			return (
+		return (
 			<li onClick={this.handleClickBindRoot} className="service-item">
 				<div className="service-text-ctnr">
 					<span className="service-name">{this.props.name}</span>
@@ -32,5 +42,4 @@ export default class ServiceListItem extends Component {
 			</li>
 		);
 	}
-
 }

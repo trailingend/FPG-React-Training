@@ -3,12 +3,13 @@ import ServiceListItem from './service-list-item';
 
 //props are inputs from parent js
 const ServiceList = (props) => {
-	const serviceItems = props.dataMap.map( (data) =>{
+	const serviceItems = props.dataMap.map( (data, index) =>{
 		return (
 			<ServiceListItem 
 				name = { data.name }
 				value = { data.value } 
-				key = { data.name }
+				key = { index }
+				index = { index }
 				onServiceChange = {props.onServiceChange }
 			/>
 		)

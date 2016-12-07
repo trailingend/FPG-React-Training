@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --open",
     "start": "node server.js",
     "postinstall": "webpack -p"
   },
