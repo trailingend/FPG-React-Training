@@ -9,10 +9,10 @@ class App extends Component {
 		super(props);
 		this.state = {
 			dataMap : [
-				{ name: "Web Development", value: 300, selected: 0 },
-				{ name: "Design", value: 400, selected: 0 },
-				{ name: "Integration", value: 250, selected: 0 },
-				{ name: "Training", value: 220, selected: 0 }
+				{ name: "Web Development", value: 300 },
+				{ name: "Design", value: 400 },
+				{ name: "Integration", value: 250 },
+				{ name: "Training", value: 220 }
 			],
 			totalValue : 0
 		};
