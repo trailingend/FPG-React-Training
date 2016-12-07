@@ -8,16 +8,18 @@ export default class ServiceListItem extends Component {
 
 	handleClick(e) {
 		const elem = e.target;
-		let deltaValue = 0;
-		if (elem.classList.contains('selected')) {
-			elem.classList.remove('selected');
-			deltaValue = - this.props.value;
-		} else {
-			elem.classList.add('selected');
-			deltaValue = this.props.value;
+		let deltaValue = 0; 
+		if (elem.classList.contains('service-text-ctnr')) {
+			if (elem.classList.contains('selected')) {
+				elem.classList.remove('selected');
+				deltaValue = - this.props.value;
+			} else {
+				elem.classList.add('selected');
+				deltaValue = this.props.value;
+			}
+			console.log("===Delta Value: ===: " + deltaValue);
+			this.props.onServiceChange(deltaValue);
 		}
-		console.log("===Delta Value: ===: " + deltaValue);
-		this.props.onServiceChange(deltaValue);
 	}
 
 	render() {
