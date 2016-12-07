@@ -18,23 +18,29 @@ export default class ServiceListItem extends Component {
 	}
 
 	doSelection(elem) {
-		let deltaValue = 0; 
+		let deltaValue;
 		if (elem.classList.contains('service-text-ctnr')) {
-			if (elem.classList.contains('selected')) {
-				elem.classList.remove('selected');
-				deltaValue = - this.props.value;
-			} else {
-				elem.classList.add('selected');
-				deltaValue = this.props.value;
-			}
-			console.log("===Delta Value: ===: " + deltaValue);
+			deltaValue = this.toggleClass(elem, 'selected');
 			this.props.onServiceChange(deltaValue);
 		}
 	}
 
+	toggleClass(elem, className) {
+		let deltaValue = 0; 
+		if (elem.classList.contains(className)) {
+			elem.classList.remove(className);
+			deltaValue = - this.props.value;
+		} else {
+			elem.classList.add(className);
+			deltaValue = this.props.value;
+		}
+		return deltaValue;
+	}
+
 	render() {
 		return (
-			<li onClick={this.handleClickBindRoot} className="service-item">
+			// stupid error arrow function to call, dont rewrite on click function
+			<li onClick={(e) => this.handleClickBindRoot(e)} className="service-item">
 				<div className="service-text-ctnr">
 					<span className="service-name">{this.props.name}</span>
 					<span className="service-value">${this.props.value}</span>
