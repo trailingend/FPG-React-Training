@@ -8,7 +8,7 @@ Install Dependency
 	npm install
 ```
 
-Develop the app
+Run the app locally
 ```
 	npm run dev
 ```
