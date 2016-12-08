@@ -42,7 +42,6 @@ body {
 }
 .service-name, .service-value {
 	color: white;
-	cursor: default;
 	z-index: -1;
 }
 .service-value {
